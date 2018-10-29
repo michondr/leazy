@@ -1,0 +1,15 @@
+[user]
+	email = 
+	name = 
+
+[push]
+	default = current
+
+[include]
+	path = "~/gitconfig/gitconfig"
+
+[core]
+	autocrlf = input
+
+[includeIf "gitdir:~/collabim/"]
+    path = ~/collabim/.gitconfig

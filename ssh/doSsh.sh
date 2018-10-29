@@ -1,0 +1,1 @@
+cp roles/config ~/.ssh/config

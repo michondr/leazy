@@ -1,0 +1,1 @@
+cp roles/hosts /etc/hosts
