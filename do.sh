@@ -22,8 +22,8 @@ run() {
 	echoColor 'hubstaff'
 	sh hubstaff/doHubstaff.sh
 	
-	echoColor 'jetbrains-intellij'
-	sh jetbrains-intellij/doIntellijIdea.sh
+	#echoColor 'jetbrains-intellij'
+	#sh jetbrains-intellij/doIntellijIdea.sh
 	
 	echoColor 'jetbrains-phpstorm'
 	sh jetbrains-phpstorm/doPhpStorm.sh
@@ -43,11 +43,11 @@ run() {
 	echoColor 'sublime'
 	sh sublime/doSublime.sh
 	
-	echoColor 'swap'
+	echoColor 'editing swap size'
 	sh swap/doSwap.sh
 	
-	echoColor 'toggl'
-	sh toggl/doToggl.sh
+	# echoColor 'toggl'
+	# sh toggl/doToggl.sh
 	
 	echoColor 'vpn'
 	sh vpn/doVpn.sh
