@@ -1,3 +1,3 @@
-wget "wget https://app.hubstaff.com/download/linux"
-sh linux
-rm linux
+wget "https://app.hubstaff.com/download/linux" -O /tmp/hubstaff.sh
+sh /tmp/hubstaff.sh
+rm /tmp/hubstaff.sh
