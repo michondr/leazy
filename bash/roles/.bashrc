@@ -11,6 +11,10 @@ rds_serpdata=''
 rds_serpdata_read=''
 rds_cgest=''
 
+s3cp_key=''
+s3cp_secret=''
+s3cp_region=''
+
 ##########################################
 # BASH TWEAKS         
 
@@ -25,6 +29,10 @@ export AWS_DEFAULT_REGION=""
 
 export ANSIBLE_HOSTS=$collabim_dir/collabim-orchestration/inventories/production/ec2.py
 export EC2_INI_PATH=$collabim_dir/collabim-orchestration/inventories/production/ec2.ini
+
+if [ -f ~/gitconfig/.git-completion.bash ]; then
+	. ~/gitconfig/.git-completion.bash
+fi
 
 ##########################################
 # ALIAS         
@@ -122,7 +130,7 @@ bridge(){
 	# 3301 - cgest
 	
 	if [[ "$1" = "write" ]]; then
-		echo $1
+		echo 'bridge write'
 		ssh -N -L 3307:$rds
 		ssh -N -L 3317:$rds_read
 
@@ -133,7 +141,7 @@ bridge(){
 		ssh -N -L 3319:$rds_serpdata_read
 
 	else
-		echo 'read'
+		echo 'bridge read'
 		ssh -N -L 3307:$rds_read
 		ssh -N -L 3317:$rds_read
 
@@ -146,4 +154,10 @@ bridge(){
 	fi
 
 	ssh -N -L 3301:$rds_cgest
+}
+
+s3cp(){
+	AWS_ACCESS_KEY_ID=$s3cp_key AWS_SECRET_ACCESS_KEY=$s3cp_secret AWS_DEFAULT_REGION=$s3cp_region aws configure set default.s3.signature_version s3v4
+	AWS_ACCESS_KEY_ID=$s3cp_key AWS_SECRET_ACCESS_KEY=$s3cp_secret AWS_DEFAULT_REGION=$s3cp_region aws s3 cp $1 s3://michondr/tmp/ #--acl public-read
+	AWS_ACCESS_KEY_ID=$s3cp_key AWS_SECRET_ACCESS_KEY=$s3cp_secret AWS_DEFAULT_REGION=$s3cp_region aws s3 presign s3://michondr/tmp/$(basename $1) | curl -s http://tinyurl.com/create.php?url=$(</dev/stdin) | grep -Po "(?<=<b>)[^<]+(?=</b><div id=\"success\">)" | xclip -selection clipboard
 }
