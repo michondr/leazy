@@ -60,7 +60,7 @@
 	{ "keys": ["ctrl+e"], "command": "show_overlay", "args": {"overlay": "goto", "show_files": true} },
 	
 	// go to command
-	{ "keys": ["ctrl+alt+a"], "command": "show_overlay", "args": {"overlay": "command_palette"} },
+	{ "keys": ["ctrl+shift+a"], "command": "show_overlay", "args": {"overlay": "command_palette"} },
 
 	// go to line
 	{ "keys": ["ctrl+g"], "command": "show_overlay", "args": {"overlay": "goto", "text": ":"} },
