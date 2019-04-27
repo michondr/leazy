@@ -1,3 +1,4 @@
+#!/usr/bin/env bash
 #### KEYBOARD SHORTCUTS
 # see all custom set - dconf dump /org/gnome/settings-daemon/plugins/media-keys/
 # see all - gsettings list-recursively org.gnome.settings-daemon.plugins.media-keys

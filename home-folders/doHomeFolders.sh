@@ -1,3 +1,4 @@
+#!/usr/bin/env bash
 sed -i -e "s@XDG_TEMPLATES_DIR@# XDG_TEMPLATES_DIR/@g" ~/.config/user-dirs.dirs
 sed -i -e "s@XDG_PUBLICSHARE_DIR@# XDG_PUBLICSHARE_DIR/@g" ~/.config/user-dirs.dirs
 sed -i -e "s@XDG_DOCUMENTS_DIR@# XDG_DOCUMENTS_DIR/@g" ~/.config/user-dirs.dirs

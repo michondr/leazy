@@ -55,8 +55,7 @@ alias dsu='bin/console d:s:u --dump-sql'
 alias bcs='bin/console'
 alias ws='bin/console worker:start $1 -v'
 alias cs='sudo bin/phing phpcs'		# "run codesniffer"
-alias msctl="multi-command \"supervisorctl$1$2\""
-alias multi-command='echo'
+alias bw='bridge write'             # run "bridge write"
 ##########################################
 # FUNCTION
 

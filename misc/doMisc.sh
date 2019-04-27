@@ -1,4 +1,5 @@
-sudo apt --assume-yes install vim git htop chromium-browser default-jdk default-jre curl python-pip ansible exfat-fuse exfat-utils xclip
+#!/usr/bin/env bash
+sudo apt --assume-yes install vim git htop chromium-browser default-jdk default-jre curl python-pip ansible exfat-fuse exfat-utils xclip flameshot
 
 # composer
 sudo curl -sS https://getcomposer.org/installer -o ~/composer-setup.php

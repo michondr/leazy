@@ -1,3 +1,4 @@
+#!/usr/bin/env bash
 dwn_location=/tmp/flameshot
 current_location=$(pwd)
 
