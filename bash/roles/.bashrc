@@ -30,9 +30,7 @@ export AWS_DEFAULT_REGION=""
 export ANSIBLE_HOSTS=$collabim_dir/collabim-orchestration/inventories/production/ec2.py
 export EC2_INI_PATH=$collabim_dir/collabim-orchestration/inventories/production/ec2.ini
 
-if [ -f ~/gitconfig/.git-completion.bash ]; then
-	. ~/gitconfig/.git-completion.bash
-fi
+. /usr/share/bash-completion/bash_completion #include all the completion tweaks 
 
 ##########################################
 # ALIAS         
