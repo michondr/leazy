@@ -35,15 +35,15 @@ export EC2_INI_PATH=$collabim_dir/collabim-orchestration/inventories/production/
 ##########################################
 # ALIAS         
 
-alias ll='ls -lhpA --color --time-style=long-iso'       	# long list
+alias ll='ls -lhpA --color --time-style=long-iso'       # long list
 alias grep='grep --color'
 alias df='df -h'
 alias du='du -sh *'
 alias vi='vim'
 alias sshq='ssh hq'
-shopt -s cdspell                	# When changing directory small typos can be ignored by bash
-alias pstorm='phpstorm'  			#start phpstorm
-alias idea='intellij-idea-ultimate' #start intellij-idea
+shopt -s cdspell                			# When changing directory small typos can be ignored by bash
+alias pstorm='phpstorm'  				#start phpstorm
+alias idea='intellij-idea-ultimate' 			#start intellij-idea
 alias sctl='sudo supervisorctl'
 alias awf='aws-fuzzy'
 alias cda='cdc app'
@@ -52,8 +52,12 @@ alias apt='sudo apt --assume-yes'
 alias dsu='bin/console d:s:u --dump-sql'
 alias bcs='bin/console'
 alias ws='bin/console worker:start $1 -v'
-alias cs='sudo bin/phing phpcs'		# "run codesniffer"
-alias bw='bridge write'             # run "bridge write"
+alias cs='sudo bin/phing phpcs'				# "run codesniffer"
+alias bw='bridge write'             			# run "bridge write"
+alias alert='notify-send --urgency=low -i "$([ $? = 0 ] && echo terminal || echo error)" "$(history|tail -n1|sed -e '\''s/^\s*[0-9]\+\s*//;s/[;&|]\s*alert$//'\'')"'
+alias free='watch -n 1 free -mh'
+alias resnet='service network-manager restart'		#restart network driver 
+alias resaud='pulseaudio -k && sudo alsa force-reload'	#restart audio driver
 ##########################################
 # FUNCTION
 
@@ -90,22 +94,9 @@ setupenv(){
     sh do.sh
 }
 
-resnet(){
-	# "reset internet"
-	service network-manager restart
-
-	if [[ $1 ==  "full" ]]; then
-    	sleep 15
-		nmcli con up id "collabim - firma"
-	fi
-
-	exit
-}
-
 vpn(){
 	# vpn up, vpn down
 	nmcli con $1 id "collabim - firma"
-
 	exit
 }
 
