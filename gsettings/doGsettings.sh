@@ -64,3 +64,4 @@ dconf write /org/gtk/settings/file-chooser/show-hidden true # show hiddent faile
 gsettings set org.gnome.nautilus.list-view default-zoom-level 'small' #show small icons
 gsettings set org.gnome.desktop.interface enable-animations true # enable animations
 gsettings set org.gnome.desktop.interface clock-show-seconds true # show seconds in status bar
+gsettings set org.gnome.desktop.background show-desktop-icons false # hide icons on desktop
