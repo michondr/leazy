@@ -7,8 +7,8 @@ run() {
 	echoColor 'etc-hosts'
 	sh etc-hosts/doEtcHosts.sh
 	
-#	echoColor 'flameshot'  # flameshot is now installed via apt
-#	sh flameshot/doFlameshot.sh
+	echoColor 'flameshot'
+	sh flameshot/doFlameshot.sh
 	
 	echoColor 'git'
 	sh git/doGit.sh
@@ -30,6 +30,9 @@ run() {
 	
 	echoColor 'misc'
 	sh misc/doMisc.sh
+
+	echoColor 'netspeed'
+	sh netspeed/doNetspeed.sh
 	
 	echoColor 'rename-pc'
 	sh rename-pc/doRename.sh
