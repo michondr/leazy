@@ -20,4 +20,6 @@
 
 sudo apt --assume-yes install flameshot
 
+mkdir -p ~/.config/Dharkael
+
 cp tasks/programs/flameshot/templates/flameshot.conf ~/.config/Dharkael/flameshot.ini
