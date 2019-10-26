@@ -1,0 +1,11 @@
+# IntelliJ IDEA
+IDEA_PROPERTIES=CONF_DIR/IntelliJIdea/idea.properties
+export IDEA_PROPERTIES
+
+# PyCharm
+PYCHARM_PROPERTIES=CONF_DIR/PyCharm/idea.properties
+export PYCHARM_PROPERTIES
+
+# PhpStorm
+PHPSTORM_PROPERTIES=CONF_DIR/PhpStorm/idea.properties
+export PHPSTORM_PROPERTIES
