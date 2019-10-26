@@ -11,6 +11,7 @@ rds_behavee=''
 # BASH TWEAKS         
 
 export PS1="\[\033[32m\]\u@\h \[\033[00m\]\w\[\033[33m\]\$(git branch 2> /dev/null | sed -e '/^[^*]/d' -e 's/* \(.*\)/ (\1)/')\[\033[00m\] $ "      # show git branch name
+
 export IDEA_PROPERTIES="~/.config/jetbrains/IntelliJIdea/idea.properties"
 export PYCHARM_PROPERTIES="~/.config/jetbrains/PyCharm/idea.properties"
 export PHPSTORM_PROPERTIES="~/.config/jetbrains/PhpStorm/idea.properties"
