@@ -1,59 +1,50 @@
 #!/bin/bash
 
 run() {
-	echoColor 'bash'
-	sh bash/doBash.sh
-	
-	echoColor 'etc-hosts'
-	sh etc-hosts/doEtcHosts.sh
-	
-	echoColor 'flameshot'
-	sh flameshot/doFlameshot.sh
-	
-	echoColor 'git'
-	sh git/doGit.sh
-	
-	echoColor 'gsettings'
-	sh gsettings/doGsettings.sh
-	
-	echoColor 'home-folders'
-	sh home-folders/doHomeFolders.sh
-	
-	echoColor 'hubstaff'
-	sh hubstaff/doHubstaff.sh
-	
-#   echoColor 'jetbrains-intellij'
-#   sh jetbrains-intellij/doIntellijIdea.sh
-	
-	echoColor 'jetbrains-phpstorm'
-	sh jetbrains-phpstorm/doPhpStorm.sh
-	
-	echoColor 'misc'
-	sh misc/doMisc.sh
+	echoColour 'system - usability - gsettings'
+    ./tasks/system-usability/gsettings/doGsettings.sh
+	echoColour 'system - usability - home-folders'
+    ./tasks/system-usability/home-folders/homeFolders.sh
+	echoColour 'system - usability - netspeed'
+    ./tasks/system-usability/netspeed/doNetspeed.sh
 
-	echoColor 'netspeed'
-	sh netspeed/doNetspeed.sh
-	
-	echoColor 'rename-pc'
-	sh rename-pc/doRename.sh
-	
-	echoColor 'spotify'
-	sh spotify/doSpotify.sh
-	
-	echoColor 'ssh'
-	sh ssh/doSsh.sh
-	
-	echoColor 'sublime'
-	sh sublime/doSublime.sh
-	
-	echoColor 'editing swap size'
-	sh swap/doSwap.sh
-	
-#	echoColor 'toggl'
-#	sh toggl/doToggl.sh
-	
-	echoColor 'vpn'
-	sh vpn/doVpn.sh
+
+	echoColour 'system - config - bashrc'
+	./tasks/system-config/bashrc/doBash.sh
+	echoColour 'system - config - etc-hosts'
+	./tasks/system-config/etc-hosts/doEtcHosts.sh
+	echoColour 'system - config - locale'
+	./tasks/system-config/locale/doLocale.sh
+	echoColour 'system - config - rename-pc'
+	./tasks/system-config/rename-pc/doRename.sh
+	echoColour 'system - config - ssh'
+	./tasks/system-config/ssh/doSsh.sh
+	echoColour 'system - config - swap (this might fail. if it does, run manually)'
+	./tasks/system-config/swap/doSwap.sh
+
+
+    echoColour 'programs - packages'
+    ./tasks/programs/packages/doPackages.sh
+    echoColour 'programs - flameshot'
+    ./tasks/programs/flameshot/doFlameshot.sh
+    echoColour 'programs - git'
+    ./tasks/programs/git/doGit.sh
+#    echoColour 'programs - hubstaff'
+#    ./tasks/programs/hubstaff/doHubstaff.sh
+    echoColour 'programs - jetbrains'
+    ./tasks/programs/jetbrains/jetbrains-intellij/doIntellijIdea.sh
+    echoColour 'programs - jetbrains'
+    ./tasks/programs/jetbrains/jetbrains-phpstorm/doPhpStorm.sh
+    echoColour 'programs - jetbrains'
+    ./tasks/programs/jetbrains/jetbrains-pycharm/doPycharm.sh
+    echoColour 'programs - spotify'
+    ./tasks/programs/spotify/doSpotify.sh
+    echoColour 'programs - sublime'
+    ./tasks/programs/sublime/doSublime.sh
+    echoColour 'programs - toggl'
+    ./tasks/programs/toggl/doToggl.sh
+    echoColour 'programs - vpn'
+    ./tasks/programs/vpn/doVpn.sh
 }
 
 echoColour() {
@@ -62,8 +53,9 @@ echoColour() {
 
 update() {
 	echoColour 'updating, upgrading'
-	sudo apt --assume-yes update;
-	sudo apt --assume-yes upgrade;
+	sudo apt --assume-yes update
+	sudo apt --assume-yes upgrade
+	sudo apt --assume-yes autoremove
 }
 
 rebootPc() {

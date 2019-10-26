@@ -1,0 +1,67 @@
+##########################################
+# VARS         
+
+s3cp_key=''
+s3cp_secret=''
+s3cp_region=''
+
+rds_behavee=''
+
+##########################################
+# BASH TWEAKS         
+
+export PS1="\[\033[32m\]\u@\h \[\033[00m\]\w\[\033[33m\]\$(git branch 2> /dev/null | sed -e '/^[^*]/d' -e 's/* \(.*\)/ (\1)/')\[\033[00m\] $ "      # show git branch name
+
+. /usr/share/bash-completion/bash_completion #include all the completion tweaks
+
+##########################################
+# ALIAS         
+
+alias ll='ls -lhpAFv --color --time-style=long-iso --group-directories-first'       # long list
+alias grep='grep --color'
+alias df='df -h'
+alias du='du -sh *'
+alias vi='vim'
+shopt -s cdspell                			# When changing directory small typos can be ignored by bash
+alias sctl='sudo supervisorctl'
+alias awf='aws-fuzzy'
+alias bcs='bin/console'
+alias resnet='service network-manager restart'		#restart network driver
+alias resaud='pulseaudio -k && sudo alsa force-reload'	#restart audio driver
+alias resblue='sudo service bluetooth restart'
+alias phpswitch='sudo update-alternatives --config php'
+alias pytest='pytest --disable-warnings'
+
+##########################################
+# FUNCTION
+
+cacl(){
+	# "cache clear"
+	sudo bin/console cache:clear
+	sudo chmod 777 -R var/cache
+	sudo chmod 777 -R var/logs
+}
+
+setupenv(){
+	# setup_collabim_enviroment
+    git clone git@gitlab.inizio.cz:collabim/setup-script.git
+    cd setup-script
+    sh do.sh
+}
+
+vpn(){
+	# vpn up, vpn down
+	nmcli con $1 id "collabim - firma"
+	exit
+}
+
+bbw(){
+    ps aux | grep ssh | grep mysql.database.azure.com | awk '{print $2}' | xargs kill -9 2> /dev/null
+    ssh -N -L 3307:$rds_behavee
+}
+
+s3cp(){
+	AWS_ACCESS_KEY_ID=$s3cp_key AWS_SECRET_ACCESS_KEY=$s3cp_secret AWS_DEFAULT_REGION=$s3cp_region aws configure set default.s3.signature_version s3v4
+	AWS_ACCESS_KEY_ID=$s3cp_key AWS_SECRET_ACCESS_KEY=$s3cp_secret AWS_DEFAULT_REGION=$s3cp_region aws s3 cp $1 s3://michondr/tmp/ #--acl public-read
+	AWS_ACCESS_KEY_ID=$s3cp_key AWS_SECRET_ACCESS_KEY=$s3cp_secret AWS_DEFAULT_REGION=$s3cp_region aws s3 presign s3://michondr/tmp/$(basename $1) | curl -s http://tinyurl.com/create.php?url=$(</dev/stdin) | grep -Po "(?<=<b>)[^<]+(?=</b><div id=\"success\">)" | xclip -selection clipboard
+}
