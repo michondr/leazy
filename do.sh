@@ -49,6 +49,7 @@ echoColour() {
 
 update() {
 	echoColour 'updating, upgrading'
+	sudo apt --assume-yes --fix-broken install
 	sudo apt --assume-yes update
 	sudo apt --assume-yes upgrade
 	sudo apt --assume-yes autoremove

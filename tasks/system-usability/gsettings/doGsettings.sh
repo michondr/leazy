@@ -8,14 +8,14 @@ gsettings set org.gnome.desktop.wm.keybindings panel-main-menu "[]" #default <Al
 gsettings set org.gnome.desktop.wm.keybindings panel-run-dialog "[]" #default <Alt>F2 - reassign to previous 
 gsettings set org.gnome.desktop.wm.keybindings show-desktop "['<Super>d']" #default also <Primary><Alt>d - coliding with "default value" in phpstorm  
 
-gsettings set org.gnome.settings-daemon.plugins.media-keys play "<Alt>F1"
-gsettings set org.gnome.settings-daemon.plugins.media-keys previous "<Alt>F2"
-gsettings set org.gnome.settings-daemon.plugins.media-keys next "<Alt>F3"
-gsettings set org.gnome.settings-daemon.plugins.media-keys volume-mute "F1"
-gsettings set org.gnome.settings-daemon.plugins.media-keys volume-down "F2"
-gsettings set org.gnome.settings-daemon.plugins.media-keys volume-up "F3"
-gsettings set org.gnome.settings-daemon.plugins.media-keys terminal "<Super>t"
-gsettings set org.gnome.settings-daemon.plugins.media-keys home "<Super>e"
+gsettings set org.gnome.settings-daemon.plugins.media-keys play "['<Alt>F1']"
+gsettings set org.gnome.settings-daemon.plugins.media-keys previous "['<Alt>F2']"
+gsettings set org.gnome.settings-daemon.plugins.media-keys next "['<Alt>F3']"
+gsettings set org.gnome.settings-daemon.plugins.media-keys volume-mute "['F1']"
+gsettings set org.gnome.settings-daemon.plugins.media-keys volume-down "['F2']"
+gsettings set org.gnome.settings-daemon.plugins.media-keys volume-up "['F3']"
+gsettings set org.gnome.settings-daemon.plugins.media-keys terminal "['<Super>t']"
+gsettings set org.gnome.settings-daemon.plugins.media-keys home "['<Super>e']"
 
 gsettings set org.gnome.desktop.wm.keybindings switch-to-workspace-up "['<Control><Super>Up']"
 gsettings set org.gnome.desktop.wm.keybindings switch-to-workspace-down "['<Control><Super>Down']"
