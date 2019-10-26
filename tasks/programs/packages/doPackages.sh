@@ -14,4 +14,5 @@ printf "[ctlplugin:wildcards]\nsupervisor.ctl_factory = supervisorwildcards.cont
 sudo unlink /var/run/supervisor.sock
 
 # aws fuzzy
-pip install aws-fuzzy-finder
+pip install aws-fuzzy-finder mysql-connector-python
+pip3 install aws-fuzzy-finder mysql-connector-python
