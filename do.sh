@@ -23,24 +23,24 @@ run() {
 	./tasks/system-config/swap/doSwap.sh
 
 
-    echoColour 'programs - packages'
-    ./tasks/programs/packages/doPackages.sh
-    echoColour 'programs - flameshot'
-    ./tasks/programs/flameshot/doFlameshot.sh
-    echoColour 'programs - git'
-    ./tasks/programs/git/doGit.sh
+  echoColour 'programs - packages'
+  ./tasks/programs/packages/doPackages.sh
+  echoColour 'programs - flameshot'
+  ./tasks/programs/flameshot/doFlameshot.sh
+  echoColour 'programs - git'
+  ./tasks/programs/git/doGit.sh
 #    echoColour 'programs - hubstaff'
 #    ./tasks/programs/hubstaff/doHubstaff.sh
-    echoColour 'programs - jetbrains'
-    ./tasks/programs/jetbrains/doJetbrains.sh
-    echoColour 'programs - spotify'
-    ./tasks/programs/spotify/doSpotify.sh
-    echoColour 'programs - sublime'
-    ./tasks/programs/sublime/doSublime.sh
-    echoColour 'programs - toggl'
-    ./tasks/programs/toggl/doToggl.sh
-    echoColour 'programs - vpn'
-    ./tasks/programs/vpn/doVpn.sh
+  echoColour 'programs - jetbrains'
+  ./tasks/programs/jetbrains/doJetbrains.sh
+  echoColour 'programs - spotify'
+  ./tasks/programs/spotify/doSpotify.sh
+  echoColour 'programs - sublime'
+  ./tasks/programs/sublime/doSublime.sh
+  echoColour 'programs - toggl'
+  ./tasks/programs/toggl/doToggl.sh
+  echoColour 'programs - vpn'
+  ./tasks/programs/vpn/doVpn.sh
 }
 
 echoColour() {
