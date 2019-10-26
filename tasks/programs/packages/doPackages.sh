@@ -1,5 +1,5 @@
 #!/usr/bin/env bash
-sudo apt --assume-yes install vim git htop chromium-browser curl python-pip ansible exfat-fuse exfat-utils xclip flameshot awscli
+sudo apt --assume-yes install vim git htop chromium-browser curl python-pip python-pytest pipenv ansible exfat-fuse exfat-utils xclip flameshot awscli
 
 # composer
 sudo curl -sS https://getcomposer.org/installer -o ~/composer-setup.php
