@@ -9,7 +9,7 @@ sudo apt --assume-yes install default-jdk default-jre
 sudo apt --assume-yes install python-pip python-pytest pipenv
 
 # php crap
-sudo apt --assume-yes install php7.3-fpm php7.3-cli php7.3-common php7.3-curl php7.3-json php7.3-mysql php7.3-xml
+sudo apt --assume-yes install php7.3-fpm php7.3-cli php7.3-common php7.3-curl php7.3-json php7.3-mysql php7.3-xml php7.3-mbstring phpunit
 
 
 # composer
