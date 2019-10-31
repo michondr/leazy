@@ -35,6 +35,8 @@ run() {
     ./tasks/programs/jetbrains/doJetbrains.sh
     echoColour 'programs - mysql'
     ./tasks/programs/mysql/doMysql.sh
+    echoColour 'programs - postman'
+    .tasks/programs/postman/doPostman.sh
     echoColour 'programs - spotify'
     ./tasks/programs/spotify/doSpotify.sh
     echoColour 'programs - sublime'
