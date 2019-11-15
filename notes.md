@@ -25,8 +25,9 @@ or regular TODO notes
 * play/pause handles youtube videos instead of spotify
     * [chrome://flags/#hardware-media-key-handling](chrome://flags/#hardware-media-key-handling) set to "disable"
 
-* hiding extensions in chromium menu
-    * manual job
+* manual job
+    * hiding extensions in chromium menu
+    * set as default browser
 
 * enabling full url in omnibar (not shortening URL by https:// and subdomains)
     * everything is in [Issue 1019020: flag to disabling omnibox shortening of URLs](https://bugs.chromium.org/p/chromium/issues/detail?id=1019020)
