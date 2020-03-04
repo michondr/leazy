@@ -1,0 +1,6 @@
+#!/bin/bash
+
+SCRIPTPATH=$(dirname "$0")
+SINK=`$SCRIPTPATH/cursink`
+
+pactl set-sink-volume $SINK +5% 

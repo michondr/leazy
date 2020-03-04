@@ -1,8 +1,10 @@
 #!/bin/bash
 
 run() {
-	echoColour 'system - usability - gsettings'
-    ./tasks/system-usability/gsettings/doGsettings.sh
+#	echoColour 'system - usability - gsettings'
+#    ./tasks/system-usability/gsettings/doGsettings.sh
+	echoColour 'system - usability - i3'
+    ./tasks/system-usability/i3/doi3.sh
 	echoColour 'system - usability - home-folders'
     ./tasks/system-usability/home-folders/homeFolders.sh
 	echoColour 'system - usability - netspeed'
