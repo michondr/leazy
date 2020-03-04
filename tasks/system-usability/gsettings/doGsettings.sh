@@ -24,8 +24,10 @@ gsettings set org.gnome.desktop.wm.keybindings switch-to-workspace-right "[]"
 
 gsettings set org.gnome.desktop.wm.keybindings switch-group "['<Alt>semicolon']"
 gsettings set org.gnome.desktop.wm.keybindings switch-windows "['<Super>Tab']"
+gsettings set org.gnome.desktop.wm.keybindings switch-windows-backward "['<Super><Shift>Tab']"
 gsettings set org.gnome.desktop.wm.keybindings switch-applications "['<Alt>Tab']"
-	
+gsettings set org.gnome.desktop.wm.keybindings switch-applications-backward "['<Alt><Shift>Tab']"
+
 # save area - <Shift><Print>
 # copy area - <Control><Shift><Print>
 # save full - <Print>

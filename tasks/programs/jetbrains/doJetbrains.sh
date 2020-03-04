@@ -21,7 +21,6 @@ cp tasks/programs/jetbrains/templates/idea.properties $conf_dir/PyCharm/idea.pro
 sudo sed -i -e "s@CONF_DIR@$conf_dir/PyCharm@g" $conf_dir/PyCharm/idea.properties
 
 # idea
-sudo apt --assume-yes install default-jdk default-jre
 sudo snap install intellij-idea-ultimate --classic
 
 # phpstorm
