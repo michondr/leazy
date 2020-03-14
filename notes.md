@@ -6,6 +6,7 @@ or regular TODO notes
 ### ssh
 * copy private ssh key to `~/.ssh/id_rsa` and `sudo chmod 600 ~/.ssh/id_rsa`
 * copy public ssh key to `~/.ssh/id_rsa.pub` and  `sudo chmod 644 ~/.ssh/id_rsa`
+* copy aws credentials to `~/.aws/credentials`
 
 ### git
 * for every client, in its folder `~/_client` create `.gitconfig` file with 

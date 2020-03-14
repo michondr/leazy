@@ -1,12 +1,6 @@
 ##########################################
 # VARS         
 
-s3cp_key=''
-s3cp_secret=''
-s3cp_region=''
-
-rds_behavee=''
-
 ##########################################
 # BASH TWEAKS         
 
@@ -30,7 +24,10 @@ alias resnet='service network-manager restart'		#restart network driver
 alias resaud='pulseaudio -k && sudo alsa force-reload'	#restart audio driver
 alias resblue='sudo service bluetooth restart'
 alias phpswitch='sudo update-alternatives --config php'
-alias pytest='pytest --disable-warnings'
+alias mysql='mysql --port=3306 --host=127.0.0.1 --user=root --password=root'
+alias drv='cd ~/_driveto/driveto.cz/'
+alias scp-db='scp driveto-preprod:driveto-db-bak.sql ~/_driveto/'
+alias scp-db-write='mysql driveto < ~/_driveto/driveto-db-bak.sql'
 
 ##########################################
 # FUNCTION
@@ -40,6 +37,14 @@ cacl(){
 	sudo bin/console cache:clear
 	sudo chmod 777 -R var/cache
 	sudo chmod 777 -R var/logs
+}
+
+cs(){
+	gnome-terminal -- /bin/sh -c 'composer --working-dir=/home/michondr/_driveto/driveto.cz phpstan; exec bash'
+	gnome-terminal -- /bin/sh -c 'composer --working-dir=/home/michondr/_driveto/driveto.cz phpcbf; exec bash'
+	sleep 1
+	gnome-terminal -- /bin/sh -c 'composer --working-dir=/home/michondr/_driveto/driveto.cz phpcs; exec bash'
+	exit
 }
 
 setupenv(){
@@ -55,13 +60,15 @@ vpn(){
 	exit
 }
 
-bbw(){
-    ps aux | grep ssh | grep mysql.database.azure.com | awk '{print $2}' | xargs kill -9 2> /dev/null
-    ssh -N -L 3307:$rds_behavee
+s3cp(){
+    if [[ $2 == '--public' ]]; then
+        aws --profile=s3cp s3 cp $1 s3://michondr/tmp/ --acl public-read
+        echo https://michondr.s3.amazonaws.com/tmp/$(basename $1)
+    else
+        aws --profile=s3cp s3 cp $1 s3://michondr/tmp/
+        aws --profile=s3cp s3 presign s3://michondr/tmp/$(basename $1) #| curl -s http://tinyurl.com/create.php?url=$(</dev/stdin) | grep -Po "(?<=<b>)[^<]+(?=</b><div id=\"success\">)" | xclip -selection clipboard
+    fi
 }
 
-s3cp(){
-	AWS_ACCESS_KEY_ID=$s3cp_key AWS_SECRET_ACCESS_KEY=$s3cp_secret AWS_DEFAULT_REGION=$s3cp_region aws configure set default.s3.signature_version s3v4
-	AWS_ACCESS_KEY_ID=$s3cp_key AWS_SECRET_ACCESS_KEY=$s3cp_secret AWS_DEFAULT_REGION=$s3cp_region aws s3 cp $1 s3://michondr/tmp/ #--acl public-read
-	AWS_ACCESS_KEY_ID=$s3cp_key AWS_SECRET_ACCESS_KEY=$s3cp_secret AWS_DEFAULT_REGION=$s3cp_region aws s3 presign s3://michondr/tmp/$(basename $1) | curl -s http://tinyurl.com/create.php?url=$(</dev/stdin) | grep -Po "(?<=<b>)[^<]+(?=</b><div id=\"success\">)" | xclip -selection clipboard
-}
+eval `ssh-agent -s` > /dev/null
+ssh-add /home/michondr/.ssh/driveto_id_rsa  > /dev/null 2>&1
