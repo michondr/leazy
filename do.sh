@@ -13,6 +13,8 @@ run() {
 
 	echoColour 'system - config - bashrc'
 	./tasks/system-config/bashrc/doBash.sh
+	echoColour 'system - config - fish'
+	./tasks/system-config/bashrc/doFish.sh
 	echoColour 'system - config - etc-hosts'
 	./tasks/system-config/etc-hosts/doEtcHosts.sh
 	echoColour 'system - config - locale'
@@ -43,8 +45,8 @@ run() {
     ./tasks/programs/spotify/doSpotify.sh
     echoColour 'programs - sublime'
     ./tasks/programs/sublime/doSublime.sh
-    echoColour 'programs - toggl'
-    ./tasks/programs/toggl/doToggl.sh
+#    echoColour 'programs - toggl'
+#    ./tasks/programs/toggl/doToggl.sh
 #    echoColour 'programs - vpn'
 #    ./tasks/programs/vpn/doVpn.sh
     echoColour 'programs - pritunl'

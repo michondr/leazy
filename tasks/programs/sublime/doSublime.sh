@@ -5,6 +5,8 @@ sudo apt --assume-yes -qq update
 sudo apt --assume-yes -qq install sublime-text libgtk2.0-0
 
 # set my custom keboard shortcuts
+mkdir ~/.config/sublime-text-3/Packages
+mkdir ~/.config/sublime-text-3/Packages/User
 cp tasks/programs/sublime/templates/michondr.sublime-keymap ~/.config/sublime-text-3/Packages/User/Default.sublime-keymap
 cp tasks/programs/sublime/templates/preferences.sublime-settings ~/.config/sublime-text-3/Packages/User/Preferences.sublime-settings
 cp tasks/programs/sublime/templates/close_without_saving.py ~/.config/sublime-text-3/Packages/User/close_without_saving.py
