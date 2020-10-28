@@ -89,10 +89,10 @@ bindsym $mod+w layout stacking
 bindsym $mod+e layout toggle split
 
 # toggle tiling / floating
-bindsym $mod+Shift+space floating toggle
+bindsym $mod+Shift+d floating toggle
 
 # change focus between tiling / floating windows
-bindsym $mod+space focus mode_toggle
+bindsym $mod+d focus mode_toggle
 
 # focus the parent container
 bindsym $mod+a focus parent
@@ -144,7 +144,7 @@ bindsym $mod+Shift+r restart
 # exit i3 (logs you out of your X session)
 bindsym $mod+Shift+e exec "i3-nagbar -t warning -m 'You pressed the exit shortcut. Do you really want to exit i3? This will end your X session.' -b 'Yes, exit i3' 'i3-msg exit'"
 # run rofi - program runner
-bindsym $mod+d exec rofi -show run -config ~/.config/i3/rofi.conf
+bindsym $mod+space exec rofi -show run -config ~/.config/i3/rofi.conf
 
 # resize window (you can also use the mouse for that)
 mode "resize" {
@@ -231,5 +231,6 @@ bindsym Mod1+F1 exec playerctl play-pause
 bindsym Mod1+F2 exec playerctl previous
 bindsym Mod1+F3 exec playerctl next
 
+bindsym XF86PowerOff exec autorandr -c
 #exec --no-startup-id xsetroot -solid "#000000"
 exec_always --no-startup-id feh --bg-fill ~/.config/i3/ghost.jpg

@@ -45,8 +45,10 @@ run() {
     ./tasks/programs/sublime/doSublime.sh
     echoColour 'programs - toggl'
     ./tasks/programs/toggl/doToggl.sh
-    echoColour 'programs - vpn'
-    ./tasks/programs/vpn/doVpn.sh
+#    echoColour 'programs - vpn'
+#    ./tasks/programs/vpn/doVpn.sh
+    echoColour 'programs - pritunl'
+    ./tasks/programs/vpn/doPritunl.sh
 }
 
 echoColour() {

@@ -11,5 +11,5 @@
 [core]
 	autocrlf = input
 
-; [includeIf "gitdir:~/collabim/"]
-;     path = ~/collabim/.gitconfig
+; [includeIf "gitdir:~/_driveto/driveto.cz/"]
+;     path = ~/_driveto/driveto.cz/.gitconfig
