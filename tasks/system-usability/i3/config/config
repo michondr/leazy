@@ -89,10 +89,10 @@ bindsym $mod+w layout stacking
 bindsym $mod+e layout toggle split
 
 # toggle tiling / floating
-bindsym $mod+Shift+space floating toggle
+bindsym $mod+Shift+d floating toggle
 
 # change focus between tiling / floating windows
-bindsym $mod+space focus mode_toggle
+bindsym $mod+d focus mode_toggle
 
 # focus the parent container
 bindsym $mod+a focus parent
@@ -114,16 +114,28 @@ set $ws8 "8: "
 set $ws9 "9: "
 set $ws10 "10:  "
 # switch to workspace
-bindsym $mod+1 workspace $ws1
-bindsym $mod+2 workspace $ws2
-bindsym $mod+3 workspace $ws3
-bindsym $mod+4 workspace $ws4
-bindsym $mod+5 workspace $ws5
-bindsym $mod+6 workspace $ws6
-bindsym $mod+7 workspace $ws7
-bindsym $mod+8 workspace $ws8
-bindsym $mod+9 workspace $ws9
+bindsym $mod+1 workspace $ws1 
+bindsym $mod+2 workspace $ws2 
+bindsym $mod+3 workspace $ws3 
+bindsym $mod+4 workspace $ws4 
+bindsym $mod+5 workspace $ws5 
+bindsym $mod+6 workspace $ws6 
+bindsym $mod+7 workspace $ws7 
+bindsym $mod+8 workspace $ws8 
+bindsym $mod+9 workspace $ws9 
 bindsym $mod+0 workspace $ws10
+
+#move all tabs to workspace
+#bindsym $mod+Shift+1 move container to workspace $ws1
+#bindsym $mod+Shift+2 move container to workspace $ws2
+#bindsym $mod+Shift+3 move container to workspace $ws3
+#bindsym $mod+Shift+4 move container to workspace $ws4
+#bindsym $mod+Shift+5 move container to workspace $ws5
+#bindsym $mod+Shift+6 move container to workspace $ws6
+#bindsym $mod+Shift+7 move container to workspace $ws7
+#bindsym $mod+Shift+8 move container to workspace $ws8
+#bindsym $mod+Shift+9 move container to workspace $ws9
+#bindsym $mod+Shift+0 move container to workspace $ws10
 
 # move focused container to workspace
 bindsym $mod+Shift+1 move container to workspace $ws1
@@ -144,7 +156,7 @@ bindsym $mod+Shift+r restart
 # exit i3 (logs you out of your X session)
 bindsym $mod+Shift+e exec "i3-nagbar -t warning -m 'You pressed the exit shortcut. Do you really want to exit i3? This will end your X session.' -b 'Yes, exit i3' 'i3-msg exit'"
 # run rofi - program runner
-bindsym $mod+d exec rofi -show run -config ~/.config/i3/rofi.conf
+bindsym $mod+space exec rofi -show run -config ~/.config/i3/rofi.conf
 
 # resize window (you can also use the mouse for that)
 mode "resize" {
@@ -200,9 +212,8 @@ bar {
 #exec bash ~/.screenlayout/home.sh
 # Swap worspaces to have it the proper way on startup
 #exec $SCRIPT/switch.py 
-exec compton
+exec compton --inactive-dim 0.3 --focus-exclude "class_g = 'flameshot'"
 exec spotify
-exec chromium
 
 # Assign windows
 assign [class="chromium"] $ws1
@@ -213,6 +224,7 @@ assign [class="chromium"] $ws1
 # assign doesnt work for spotify
 for_window [class="Spotify"] move to workspace $ws10
 for_window [class="flameshot"] floating enable
+for_window [class="Pavucontrol"] floating enable
 
 # Media player controls
 bindsym XF86AudioPlay exec playerctl play-pause
@@ -222,7 +234,9 @@ bindsym XF86Calculator exec systemctl suspend
 
 #custom shortcuts
 bindsym $mod+s exec flameshot gui
+bindsym $mod+Shift+s exec flameshot full -c
 bindsym $mod+Return exec gnome-terminal
+bindsym $mod+Shift+f exec pavucontrol
 
 bindsym F1 exec $SCRIPT/volumetoggle
 bindsym F2 exec $SCRIPT/volumedown 
@@ -231,5 +245,7 @@ bindsym Mod1+F1 exec playerctl play-pause
 bindsym Mod1+F2 exec playerctl previous
 bindsym Mod1+F3 exec playerctl next
 
+bindsym XF86PowerOff exec autorandr -c ntb-only
 #exec --no-startup-id xsetroot -solid "#000000"
 exec_always --no-startup-id feh --bg-fill ~/.config/i3/ghost.jpg
+exec_always xrandr --dpi 75
