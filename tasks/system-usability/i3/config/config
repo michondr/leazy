@@ -236,7 +236,11 @@ bindsym XF86Calculator exec systemctl suspend
 bindsym $mod+s exec flameshot gui
 bindsym $mod+Shift+s exec flameshot full -c
 bindsym $mod+Return exec gnome-terminal
+bindsym $mod+i exec arandr
+bindsym $mod+Shift+i exec xrand --auto
 bindsym $mod+Shift+f exec pavucontrol
+bindsym $mod+Shift+o exec xrandr --dpi 220 ; exec i3 restart
+bindsym $mod+Shift+p exec xrandr --dpi  75 ; exec i3 restart
 
 bindsym F1 exec $SCRIPT/volumetoggle
 bindsym F2 exec $SCRIPT/volumedown 
@@ -249,3 +253,5 @@ bindsym XF86PowerOff exec autorandr -c ntb-only
 #exec --no-startup-id xsetroot -solid "#000000"
 exec_always --no-startup-id feh --bg-fill ~/.config/i3/ghost.jpg
 exec_always xrandr --dpi 75
+exec_always xset s off
+exec_always xset -dpms
