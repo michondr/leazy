@@ -238,7 +238,7 @@ bindsym $mod+Shift+s exec flameshot full -c
 bindsym $mod+Return exec gnome-terminal
 bindsym $mod+i exec arandr
 bindsym $mod+Shift+i exec xrand --auto
-bindsym $mod+Shift+f exec pavucontrol
+bindsym $mod+Shift+f exec $SCRIPT/start_pavucontroll_clear_spotify.sh
 bindsym $mod+Shift+o exec xrandr --dpi 220 ; exec i3 restart
 bindsym $mod+Shift+p exec xrandr --dpi  75 ; exec i3 restart
 
