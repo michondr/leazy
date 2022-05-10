@@ -9,8 +9,9 @@
 #
 # Please see http://i3wm.org/docs/userguide.html for a complete reference!
 
-# Mod1 is alt, Mod4 is win
+# Mod1 is alt, Mod4 is win, Mod5 is altGr. see all with xmodmap
 set $mod Mod4
+set $altgr Mod5
 set $SCRIPT ~/.config/i3/scripts
 
 # Font for window titles. Will also be used by the bar unless a different font
@@ -97,9 +98,7 @@ bindsym $mod+d focus mode_toggle
 # focus the parent container
 bindsym $mod+a focus parent
 
-# focus the child container
-bindsym $mod+Shift+a focus child
-
+# lock & sleep
 bindsym $mod+l exec $SCRIPT/lock.sh
 bindsym $mod+Shift+l exec "$SCRIPT/lock.sh && exec systemctl suspend"
 
@@ -113,6 +112,7 @@ set $ws7 "7: "
 set $ws8 "8: "
 set $ws9 "9: "
 set $ws10 "10:  "
+
 # switch to workspace
 bindsym $mod+1 workspace $ws1 
 bindsym $mod+2 workspace $ws2 
@@ -124,18 +124,6 @@ bindsym $mod+7 workspace $ws7
 bindsym $mod+8 workspace $ws8 
 bindsym $mod+9 workspace $ws9 
 bindsym $mod+0 workspace $ws10
-
-#move all tabs to workspace
-#bindsym $mod+Shift+1 move container to workspace $ws1
-#bindsym $mod+Shift+2 move container to workspace $ws2
-#bindsym $mod+Shift+3 move container to workspace $ws3
-#bindsym $mod+Shift+4 move container to workspace $ws4
-#bindsym $mod+Shift+5 move container to workspace $ws5
-#bindsym $mod+Shift+6 move container to workspace $ws6
-#bindsym $mod+Shift+7 move container to workspace $ws7
-#bindsym $mod+Shift+8 move container to workspace $ws8
-#bindsym $mod+Shift+9 move container to workspace $ws9
-#bindsym $mod+Shift+0 move container to workspace $ws10
 
 # move focused container to workspace
 bindsym $mod+Shift+1 move container to workspace $ws1
@@ -230,10 +218,10 @@ for_window [class="Pavucontrol"] floating enable
 bindsym XF86AudioPlay exec playerctl play-pause
 bindsym XF86AudioNext exec playerctl next
 bindsym XF86AudioPrev exec playerctl previous
-bindsym XF86Calculator exec systemctl suspend
 
 #custom shortcuts
 bindsym $mod+s exec flameshot gui
+bindsym $altgr+Lstroke exec flameshot gui
 bindsym $mod+Shift+s exec flameshot full -c
 bindsym $mod+Return exec gnome-terminal
 bindsym $mod+i exec arandr
