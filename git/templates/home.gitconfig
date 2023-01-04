@@ -6,10 +6,12 @@
 	default = current
 
 [include]
-	path = "~/.config/gitconfig/gitconfig"
+	path = "~/_michondr/gitconfig/gitconfig"
 
 [core]
 	autocrlf = input
+	excludesfile = /home/michondr/.gitignore_global
+	editor = vi
 
 ; [includeIf "gitdir:~/collabim/"]
 ;     path = ~/collabim/.gitconfig
