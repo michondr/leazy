@@ -1,9 +1,9 @@
 #!/bin/bash
 
-BAT=$(acpi -b | grep -E -o '[0-9]+?%')
+BAT=$(acpi -b | grep 'Battery 1' | grep -E -o '[0-9]+?%')
 
 # Full and short texts
-echo $(acpi -b | cut -d: -f2-)
+echo $(acpi -b | grep 'Battery 1' | cut -d: -f2-)
 echo "BAT: $BAT"
 
 # Set urgent flag below 5% or use orange below 20%
