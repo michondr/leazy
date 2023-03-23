@@ -1,0 +1,48 @@
+# Insert your preferred key mappings here.
+unmapAll
+map ? showHelp
+map k scrollUp
+map K scrollToTop
+map j scrollDown
+map J scrollToBottom
+map u scrollPageUp
+map d scrollPageDown
+map h scrollLeft
+map H goBack
+map l scrollRight
+map L goForward
+map r reload
+map c copyCurrentUrl
+map p openCopiedUrlInCurrentTab
+map P openCopiedUrlInNewTab
+map i enterInsertMode
+map v enterVisualMode
+map V enterVisualLineMode
+map gi focusInput
+map f LinkHints.activateMode
+map F LinkHints.activateModeToOpenInNewTab
+map yf
+map o Vomnibar.activate
+map O Vomnibar.activateInNewTab
+map b Vomnibar.activateBookmarks
+map B Vomnibar.activateBookmarksInNewTab
+map t createTab
+# map T Vomnibar.activateTabSelection
+map <c-e> Vomnibar.activateTabSelection
+map e Vomnibar.activateEditUrl
+map E Vomnibar.activateEditUrlInNewTab
+map / enterFindMode
+map m performFind
+map n performBackwardsFind
+map x removeTab
+map X restoreTab
+map W moveTabToNewWindow
+map a previousTab
+map A firstTab
+map s nextTab
+map S lastTab
+map D duplicateTab
+map <a-a> closeTabsOnLeft
+map <a-s> closeTabsOnRight
+map <c-a> moveTabLeft
+map <c-s> moveTabRight
