@@ -1,3 +1,23 @@
 # Leazy - linux-eazy for lazy people
 
-set up i3 environment on fresh install
+Set up environment on fresh install:
+* [i3wm](https://i3wm.org/) todo: move to sway
+* [fish](https://fishshell.com/)
+* [gitconfig](https://github.com/michondr/gitconfig) (fork of [porn/gitconfig](https://github.com/porn/gitconfig))
+* [jetbrain shorcuts](https://github.com/michondr/jetbrains-speedy-shortcuts) my own doing. I use them for PHPStorm and GOLand
+* vimrc
+* terminal color
+
+install by:
+```shell
+cd leazy/
+sh init.sh
+```
+install single part:
+
+```shell
+cd leazy/
+sh vim/init.sh
+```
+
+could I use [yadm](https://yadm.io/)? Yep. maybe later
