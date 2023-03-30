@@ -1,6 +1,6 @@
 # Insert your preferred key mappings here.
 unmapAll
-map ? showHelp
+map / showHelp
 map k scrollUp
 map K scrollToTop
 map j scrollDown
@@ -31,7 +31,7 @@ map t createTab
 map <c-e> Vomnibar.activateTabSelection
 map e Vomnibar.activateEditUrl
 map E Vomnibar.activateEditUrlInNewTab
-map / enterFindMode
+map ? enterFindMode
 map m performFind
 map n performBackwardsFind
 map x removeTab
