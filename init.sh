@@ -2,3 +2,4 @@
 
 sh ../git/init.sh
 sh ../i3/init.sh
+sh ../vim/init.sh
