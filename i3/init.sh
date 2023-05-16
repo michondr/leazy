@@ -6,5 +6,6 @@ sudo apt --assume-yes install i3 i3blocks arandr autorandr rofi compton fonts-fo
 ln -s ~/_michondr/leazy/i3/setup/ ~/.config/i3
 chmod +x config/scripts/date.sh
 chmod +x config/scripts/start_pavucontroll_clear_spotify.sh
+chmod +x config/scripts/flameshot_screenshot.sh
 
 # should be enough to logout via `gnome-session-quit` and log in to i3
