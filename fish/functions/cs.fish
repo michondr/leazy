@@ -1,3 +1,0 @@
-function cs --wraps=docker\ exec\ -it\ \(docker\ ps\ --filter\ NAME=app\ --format\ \'\{\{.ID\}\}\'\)\ sh\ -c\ \'bin/phpcbf\ --standard=build/cs-ruleset.xml\ --extensions=php\ --encoding=utf-8\ src\ tests\ -sp\ --parallel=80\ \;\ bin/phing\ phpstan\ \;\ bin/phing\ phpcs\' --description alias\ cs\ docker\ exec\ -it\ \(docker\ ps\ --filter\ NAME=app\ --format\ \'\{\{.ID\}\}\'\)\ sh\ -c\ \'bin/phpcbf\ --standard=build/cs-ruleset.xml\ --extensions=php\ --encoding=utf-8\ src\ tests\ -sp\ --parallel=80\ \;\ bin/phing\ phpstan\ \;\ bin/phing\ phpcs\'
-  docker exec -it (docker ps --filter NAME=app --format '{{.ID}}') sh -c 'bin/phpcbf --standard=build/cs-ruleset.xml --extensions=php --encoding=utf-8 src tests -sp --parallel=80 ; bin/phing phpstan ; bin/phing phpcs' $argv; 
-end
