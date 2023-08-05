@@ -1,7 +1,7 @@
 #!/usr/bin/env bash
 
 # install proper vim
-sudo apt install vim -y
+sudo apt install vim curl -y
 
 # symlink the rc file to home
 ln -s ~/_michondr/leazy/vim/.vimrc   ~/
