@@ -9,4 +9,3 @@ set $SCRIPT ~/.config/i3/scripts
 
 include configs/*.conf
 
-font pango:FontAwesome 10
