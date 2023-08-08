@@ -1,7 +1,7 @@
 #!/usr/bin/env bash
 # all of i3 crap that is needed
 
-sudo apt --assume-yes install i3 i3blocks arandr autorandr rofi compton fonts-font-awesome feh flameshot playerctl pavucontrol imagemagick-6.q16 scrot
+sudo apt --assume-yes install i3 i3blocks arandr autorandr rofi compton fonts-font-awesome feh flameshot playerctl pavucontrol imagemagick-6.q16 scrot xdotool
 
 ln -s ~/_michondr/leazy/i3/setup/ ~/.config/i3
 chmod +x setup/scripts/start_pavucontroll_clear_spotify.sh
