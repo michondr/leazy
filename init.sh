@@ -1,6 +1,10 @@
 #!/usr/bin/env bash
 
 sudo snap install spotify
+sudo snap install slack
+sudo snap install phpstorm --classic
+sudo snap install goland --classic
+
 sudo snap install signal-desktop
 sudo apt install golang -y
 
