@@ -21,3 +21,15 @@ sh vim/init.sh
 ```
 
 could I use [yadm](https://yadm.io/)? Yep. maybe later
+
+### manual steps
+```
+# system-wide dark mode
+# firefox dark color while loading sites
+~/.config/gtk-3.0/settings.ini
+
+[Settings]
+#gtk-theme-name=Arc-Dark
+#gtk-icon-theme-name=breeze-dark
+gtk-application-prefer-dark-theme=1
+```
