@@ -33,3 +33,8 @@ could I use [yadm](https://yadm.io/)? Yep. maybe later
 #gtk-icon-theme-name=breeze-dark
 gtk-application-prefer-dark-theme=1
 ```
+
+scaling of UI:
+```
+echo "Xft.dpi: 150" >> ~/.Xresources
+```
