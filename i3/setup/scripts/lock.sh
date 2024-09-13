@@ -10,7 +10,7 @@
 #convert "$tmpbg" "$icon" -gravity center -composite -matte "$tmpbg"
 #i3lock -i "$tmpbg"
 
-if [ $(date +"%H") -ge 21 ]
+if [ $(date +"%H") -ge 20 ]
 then
   i3lock -c 000000
 else
