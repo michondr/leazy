@@ -1,0 +1,1 @@
+alias crontab="crontab -i"
