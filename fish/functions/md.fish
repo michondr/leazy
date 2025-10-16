@@ -1,0 +1,1 @@
+alias md="cd /home/michondr/_michondr/mediastack"
