@@ -1,1 +1,0 @@
-alias crontab="docker compose --file /home/michondr/_michondr/mediastack/full-vpn_single-yaml/docker-compose-mediastack.yaml --env-file /home/michondr/_michondr/mediastack/full-vpn_single-yaml/docker-compose.env down --remove-orphans"
